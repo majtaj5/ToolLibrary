@@ -13,6 +13,7 @@ namespace ToolLibrary.Core
         protected void OnProperyChanged(string name)
         {
             PropertyChanged(this, new PropertyChangedEventArgs(name));
+
         }
     }
 }
