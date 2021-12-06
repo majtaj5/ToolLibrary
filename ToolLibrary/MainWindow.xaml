@@ -5,8 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToolLibrary"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        
+        Title="Tool Library" Height="600" Width="900"
+        ResizeMode="NoResize"
+        Background="Black"
+        
+    
+    >
+    <Border Background="DarkSlateGray">
 
-    </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="2.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Tool Library"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Foreground="White"
+                   FontSize="25"/>
+            <StackPanel Grid.Row="1">
+                <Button Content="Librarary management"
+                        Style="{StaticResource MainButton}"
+                        Height="80"
+                        FontSize="14"/>
+                <Button Content="Borrow tool"
+                        Style="{StaticResource MainButton}"
+                         Height="80"
+                        FontSize="14"/>
+            </StackPanel>
+            <TextBox Grid.Column="2"
+                       Width="300"
+                       Height="40"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="5"
+                       Style="{StaticResource ModernTextBox}"/>
+        </Grid>
+
+    </Border>
+
 </Window>
