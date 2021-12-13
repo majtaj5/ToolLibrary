@@ -1,11 +1,12 @@
-﻿using System.Windows.Input;
+﻿using System.Windows;
+using System.Windows.Input;
 using ToolLibrary.Core;
 
 namespace ToolLibrary.MVVM.ViewModels
 {
     public class MainViewModel : ObservableObject
     {
-        private ObservableObject _SelectedViewModel = new LibraryManagementViewModel();
+        private ObservableObject _SelectedViewModel = new BorrowToolViewModel();
 
 
 
@@ -21,23 +22,30 @@ namespace ToolLibrary.MVVM.ViewModels
             }
         }
 
-
+        bool loggIn = true;//todo logg in access
         private ICommand _updateViewCommand;
 
-        public ICommand UpdateViewCommand => _updateViewCommand ?? (_updateViewCommand = new RelayCommand(SwitchViews));
+        public ICommand UpdateViewCommand => _updateViewCommand ??= new RelayCommand(SwitchViews);
 
-        public void SwitchViews(object dupa)
+        public void SwitchViews(object o)
         {
-            switch (dupa.ToString())
+            switch (o.ToString())
             {
-                case "Librarary management":
-                    {
-                        SelectedViewModel = new LibraryManagementViewModel();
-                        break;
-                    }
                 case "Borrow tool":
                     {
                         SelectedViewModel = new BorrowToolViewModel();
+                        break;
+                    }
+                case "Librarary management":
+                    {
+                        if (loggIn)//todo logg in access
+                        {
+                            SelectedViewModel = new LibraryManagementViewModel();
+                        }
+                        else if (loggIn == false)
+                        {
+                            MessageBoxResult result = MessageBox.Show("You don't have access to management library");
+                        }
                         break;
                     }
             }

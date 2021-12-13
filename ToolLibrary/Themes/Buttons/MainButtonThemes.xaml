@@ -3,5 +3,8 @@
     <Style TargetType="{x:Type Button}" x:Key="MainButton">
         <Setter Property="Background" Value="DarkSlateBlue"/>
         <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Height" Value="80"/>
     </Style>
 </ResourceDictionary>

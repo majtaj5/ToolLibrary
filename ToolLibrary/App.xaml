@@ -16,9 +16,9 @@
         <DataTemplate DataType="{x:Type viewmodels:LibraryManagementViewModel}">
             <view:LibraryManagementView />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:BorrowToolViewModel}">
-            <view:BorrowToolView />
-        </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:BorrowToolViewModel}">
+                <view:BorrowToolView />
+            </DataTemplate>
             
         </ResourceDictionary>
 
