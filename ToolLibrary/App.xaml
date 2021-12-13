@@ -2,6 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:ToolLibrary"
+             xmlns:viewmodels="clr-namespace:ToolLibrary.MVVM.ViewModels"
+             xmlns:view="clr-namespace:ToolLibrary.MVVM.Views"
+             
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -9,7 +12,16 @@
                 <ResourceDictionary Source="Themes/Buttons/MainButtonThemes.xaml"/>
                 <ResourceDictionary Source="Themes/TextBoxes/TextBoxesThemes.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+        
+        <DataTemplate DataType="{x:Type viewmodels:LibraryManagementViewModel}">
+            <view:LibraryManagementView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:BorrowToolViewModel}">
+            <view:BorrowToolView />
+        </DataTemplate>
+            
         </ResourceDictionary>
+
     </Application.Resources>
  
 </Application>

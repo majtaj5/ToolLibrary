@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ToolLibrary.MVVM.ViewModels
 {
-    class LibraryManagementViewModel
+    public class LibraryManagementViewModel : BaseViewModel
     {
     }
 }

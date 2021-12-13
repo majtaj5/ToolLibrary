@@ -35,11 +35,13 @@
                 <Button Content="Librarary management"
                         Style="{StaticResource MainButton}"
                         Height="80"
-                        FontSize="14"/>
+                        FontSize="14"
+                        Command="{Binding UpdateViewCommand}" CommandParameter="Librarary management"/>
                 <Button Content="Borrow tool"
                         Style="{StaticResource MainButton}"
                          Height="80"
-                        FontSize="14"/>
+                        FontSize="14"
+                        Command="{Binding UpdateViewCommand}" CommandParameter="Borrow tool"/>
             </StackPanel>
             <TextBox Grid.Column="2"
                        Width="300"
@@ -48,6 +50,9 @@
                        HorizontalAlignment="Left"
                        Margin="5"
                        Style="{StaticResource ModernTextBox}"/>
+            <ContentControl Content="{Binding SelectedViewModel}"
+                            Grid.Column="1"
+                            Grid.Row="1"/>
         </Grid>
 
     </Border>
