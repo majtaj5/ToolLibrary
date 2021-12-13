@@ -9,12 +9,14 @@ using ToolLibrary.Core;
 
 namespace ToolLibrary.MVVM.ViewModels
 {
-    public class MainViewModel : BaseViewModel
+    public class MainViewModel : ObservableObject
     {
-        private BaseViewModel _SelectedViewModel = new LibraryManagementViewModel();
+        private ObservableObject _SelectedViewModel = new LibraryManagementViewModel();
 
 
-        public BaseViewModel SelectedViewModel
+
+
+        public ObservableObject SelectedViewModel
         {
             get { return _SelectedViewModel; }
             set 
@@ -32,6 +34,9 @@ namespace ToolLibrary.MVVM.ViewModels
             UpdateViewCommand = new UpdateViewCommand(this);
                
         }
+
+
+
 
 
     }
