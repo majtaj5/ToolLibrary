@@ -17,9 +17,9 @@
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="225"/>
+                <ColumnDefinition/>
+
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
@@ -31,23 +31,26 @@
                    HorizontalAlignment="Center"
                    Foreground="White"
                    FontSize="25"/>
-            <StackPanel Margin="0,97,0,0" Grid.RowSpan="2">
+            <StackPanel Orientation="Horizontal" Grid.Column="1">
                 <Button Content="Borrow tool"
+                        Background="Transparent"
                         Style="{StaticResource MainButton}"
                         Command="{Binding UpdateViewCommand}" CommandParameter="Borrow tool"/>
                 <Button Content="Librarary management"
+                        Background="Transparent"
                         Style="{StaticResource MainButton}"
                         Command="{Binding UpdateViewCommand}" CommandParameter="Librarary management"/>
-            </StackPanel>
-            <TextBox Grid.Column="2"
-                       Width="300"
+                <TextBox Grid.Column="2"
+                       Width="220"
                        Height="40"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
                        Margin="5,0,0,0"
                        Style="{StaticResource ModernTextBox}"/>
+            </StackPanel>
+
             <ContentControl Content="{Binding SelectedViewModel}"
-                            Grid.Column="1" Margin="0,97,0,0" Grid.RowSpan="2"/>
+                            Margin="0,97,0,0" Grid.RowSpan="2"/>
         </Grid>
 
     </Border>
