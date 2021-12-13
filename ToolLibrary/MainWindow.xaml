@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ToolLibrary"
         mc:Ignorable="d"
         
-        Title="Tool Library" Height="600" Width="900"
+        Title="Tool Library" Height="630" Width="900"
         ResizeMode="NoResize"
         Background="Black"
         
@@ -17,14 +17,15 @@
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="225"/>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="3*"/>
 
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="5*"/>
+                <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
             <TextBlock Text="Tool Library"
                    VerticalAlignment="Center"
@@ -51,6 +52,17 @@
 
             <ContentControl Content="{Binding SelectedViewModel}"
                             Margin="0,97,0,0" Grid.RowSpan="2"/>
+            <ScrollViewer Grid.Column="1"
+                          Grid.Row="1">
+                <ItemsControl ItemsSource="{Binding WorkTaskList}" 
+                              Margin="10"
+                              Grid.Column="1"
+                              Grid.Row="1"
+                              >
+
+                </ItemsControl>
+            </ScrollViewer>
+            
         </Grid>
 
     </Border>

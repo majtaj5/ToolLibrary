@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:ToolLibrary.MVVM.Views"
              mc:Ignorable="d" 
               d:DesignHeight="486.7" 
-             d:DesignWidth="500"
+             d:DesignWidth="675"
              Background="Transparent">
     <Grid>
         <StackPanel Orientation="Horizontal">
