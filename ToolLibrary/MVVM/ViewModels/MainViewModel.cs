@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using ToolLibrary.Commands;
+﻿using System.Windows.Input;
 using ToolLibrary.Core;
 
 namespace ToolLibrary.MVVM.ViewModels
@@ -26,18 +20,28 @@ namespace ToolLibrary.MVVM.ViewModels
 
             }
         }
-        public ICommand UpdateViewCommand { get; set; }
 
-        public MainViewModel()
+
+        private ICommand _updateViewCommand;
+
+        public ICommand UpdateViewCommand => _updateViewCommand ?? (_updateViewCommand = new RelayCommand(SwitchViews));
+
+        public void SwitchViews(object dupa)
         {
-
-            UpdateViewCommand = new UpdateViewCommand(this);
-               
+            switch (dupa.ToString())
+            {
+                case "Librarary management":
+                    {
+                        SelectedViewModel = new LibraryManagementViewModel();
+                        break;
+                    }
+                case "Borrow tool":
+                    {
+                        SelectedViewModel = new BorrowToolViewModel();
+                        break;
+                    }
+            }
         }
-
-
-
-
 
     }
 }
