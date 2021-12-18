@@ -22,7 +22,7 @@ namespace ToolLibrary.MVVM.ViewModels
             }
         }
 
-        bool loggIn = true;//todo logg in access
+        bool loggIn = false;//todo logg in access
         private ICommand _updateViewCommand;
 
         public ICommand UpdateViewCommand => _updateViewCommand ??= new RelayCommand(SwitchViews);

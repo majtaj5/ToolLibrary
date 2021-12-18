@@ -9,6 +9,18 @@
              d:DesignWidth="675"
              Background="Transparent">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
         <StackPanel Orientation="Horizontal">
             <CheckBox IsChecked="{Binding IsSelected}"/>
             <TextBlock Text="dd"/>
